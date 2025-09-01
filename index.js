@@ -43,15 +43,13 @@ async function scrapeAllPages(brand) {
     );
 }
 
-// Rota inicial
 app.get("/", (req, res) => {
   res.send("Servidor rodando!");
 });
 
-// Rota de notebooks com filtro por querystring
 app.get("/notebooks", async (req, res) => {
     try {
-        const brand = req.query.brand?.toLowerCase(); // ?brand=lenovo
+        const brand = req.query.brand?.toLowerCase(); 
         const notebooks = await scrapeAllPages(brand);
         res.json(notebooks);
     } catch (err) {
