@@ -44,7 +44,7 @@ async function scrapeAllPages(brand) {
 }
 
 app.get("/", (req, res) => {
-  res.send("Servidor rodando!");
+  res.send("Servidor rodando!, acesse as rotas /notebooks ou notebooks?brand=NOME DA MARCA");
 });
 
 app.get("/notebooks", async (req, res) => {
